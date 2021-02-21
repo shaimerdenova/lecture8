@@ -9,15 +9,62 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="lecture8" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="71" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="lecture8" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcy-XS-pTu">
+                        <rect key="frame" x="16" y="25" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skP-eB-OYw">
+                        <rect key="frame" x="217" y="25" width="38" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKJ-R4-6Wx">
+                        <rect key="frame" x="267" y="25" width="38" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="24q-Xq-qUE">
+                        <rect key="frame" x="120" y="-4.5" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="U1s-iw-Jye"/>
+                            <constraint firstAttribute="height" constant="80" id="xlb-sE-qsE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YKJ-R4-6Wx" firstAttribute="leading" secondItem="skP-eB-OYw" secondAttribute="trailing" constant="12" id="3TA-YR-gVf"/>
+                    <constraint firstItem="YKJ-R4-6Wx" firstAttribute="leading" secondItem="skP-eB-OYw" secondAttribute="trailing" constant="12" id="JIh-Qy-3zP"/>
+                    <constraint firstItem="Tcy-XS-pTu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QSx-ab-B3Y"/>
+                    <constraint firstAttribute="bottom" secondItem="skP-eB-OYw" secondAttribute="bottom" constant="28" id="Up3-56-dji"/>
+                    <constraint firstItem="skP-eB-OYw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="Zdz-eA-PKq"/>
+                    <constraint firstItem="24q-Xq-qUE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ZwZ-kZ-XNz"/>
+                    <constraint firstAttribute="trailing" secondItem="YKJ-R4-6Wx" secondAttribute="trailing" constant="15" id="c3T-ao-HTD"/>
+                    <constraint firstAttribute="bottom" secondItem="Tcy-XS-pTu" secondAttribute="bottom" constant="25" id="hSH-Ac-FS6"/>
+                    <constraint firstAttribute="bottom" secondItem="YKJ-R4-6Wx" secondAttribute="bottom" constant="28" id="kxr-Ca-ULa"/>
+                    <constraint firstItem="YKJ-R4-6Wx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="p0m-NL-Ofq"/>
+                    <constraint firstItem="24q-Xq-qUE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sK3-gO-F9U"/>
+                    <constraint firstItem="Tcy-XS-pTu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="zqr-G2-Kc7"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-345" y="115"/>
+            <connections>
+                <outlet property="day" destination="Tcy-XS-pTu" id="kvO-St-2BZ"/>
+                <outlet property="feelsLike" destination="YKJ-R4-6Wx" id="Jch-4d-oR3"/>
+                <outlet property="image1" destination="24q-Xq-qUE" id="h6H-hP-5SZ"/>
+                <outlet property="temp" destination="skP-eB-OYw" id="LPj-fb-IQ9"/>
+            </connections>
+            <point key="canvasLocation" x="-510.14492753623193" y="-26.450892857142858"/>
         </tableViewCell>
     </objects>
 </document>

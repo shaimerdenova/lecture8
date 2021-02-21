@@ -1,26 +1,14 @@
-//
-//  ViewController.swift
-//  lecture8
-//
-//  Created by admin on 08.02.2021.
-//
-
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class SecondViewController: UIViewController {
     
-    @IBOutlet weak var cityName: UILabel!
-    @IBOutlet weak var temp: UILabel!
-    @IBOutlet weak var feelsLikeTemp: UILabel!
-    @IBOutlet weak var desc: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
     
     let url = Constants.host
     var myData: Model?
     
     
+    @IBOutlet var cityName: UILabel!
     private var decoder: JSONDecoder = JSONDecoder()
 
     override func viewDidLoad() {
@@ -68,30 +56,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell2 = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         let item2 = myData?.daily?[indexPath.item]
-        cell2.day.text = getDayForDate ( date: Date(timeIntervalSince1970: Double(item2?.dt ?? 1)))
-        cell2.temp.text = "\(item2?.temp?.day ?? 0.0)"
-        cell2.feelsLike.text = "\(item2?.feels_like?.day ?? 0.0)"
-        cell2.image1.contentMode = .scaleAspectFit
-        
-        let icon = item2?.weather?.description.lowercased()
-        if ((icon?.contains("cloud")) != nil){
-            cell2.image1.image = UIImage(named: "cloud")
-        }
-        else if ((icon?.contains("rain")) != nil){
-            cell2.image1.image = UIImage(named: "rain")
-        }
-        else if ((icon?.contains("clear")) != nil){
-            cell2.image1.image = UIImage(named: "clear")
-        }
+      //  cell2.day.text = getDayForDate(Date(timeIntervalSince1970: Double(myData?.current)))
+        cell2.temp.text = "\(item2?.temp?.temp ?? 0.0)"
+        cell2.feelsLike.text = "\(item2?.temp?.feels_like ?? 0.0)"
+        cell2.image1.image = UIImage(named: "clear")
         return cell2
-        
     }
 
     
 }
 func getDayForDate( date: Date?) -> String{
     guard let inputDate = date else {
-return " "
+return ""
     }
     let formatter = DateFormatter()
     formatter.dateFormat = "EEEE"
@@ -120,5 +96,4 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         return CGSize(width: 100, height: 100)
     }
 }
-
 

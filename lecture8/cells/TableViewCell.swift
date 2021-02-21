@@ -9,6 +9,13 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+
+    @IBOutlet var temp: UILabel!
+    @IBOutlet var image1: UIImageView!
+    @IBOutlet var day: UILabel!
+    @IBOutlet var feelsLike: UILabel!
+    static let identifier = String(describing: TableViewCell.self)
+    static let nib = UINib(nibName: identifier, bundle: nil)
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

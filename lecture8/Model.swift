@@ -9,6 +9,7 @@ import Foundation
 
 
 public struct Model: Codable{
+    let dt: Int?
     let timezone: String?
     let hourly: [Current]?
     let daily: [Daily]?
@@ -17,15 +18,19 @@ public struct Model: Codable{
 }
 
 struct Current: Codable {
+    let dt: Int?
     let temp: Double?
     let feels_like: Double?
     let weather: [Weather]?
 }
 
 struct Daily: Codable {
+    let dt: Int?
+    let weather: [Weather]?
     let temp: Temp?
     let feels_like: Temp?
-    let weather: [Weather]?
+    
+    
 }
 
 struct Temp: Codable {
